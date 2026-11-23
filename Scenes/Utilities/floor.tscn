@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://d3gif2hinlmj2"]
+
+[ext_resource type="Shader" uid="uid://dcc0av6s1kalv" path="res://Assets/Shaders/lighting.gdshader" id="1_i10nw"]
+[ext_resource type="Texture2D" uid="uid://d027j0vj7g6y6" path="res://Assets/Tiles/Floor/floor.png" id="2_sebit"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y2qpd"]
+shader = ExtResource("1_i10nw")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5mvg0"]
+texture = ExtResource("2_sebit")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 3, 8, 3, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/probability = 0.8
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 3, 8, 3, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/probability = 0.6
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 3, 8, 3, 8, 8, -8, 8)
+3:0/0 = 0
+3:0/0/probability = 0.6
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 3, 8, 3, 8, 8, -8, 8)
+4:0/0 = 0
+4:0/0/probability = 0.6
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 3, 8, 3, 8, 8, -8, 8)
+5:0/0 = 0
+5:0/0/probability = 0.6
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 3, 8, 3, 8, 8, -8, 8)
+6:0/0 = 0
+6:0/0/probability = 0.6
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 3, 8, 3, 8, 8, -8, 8)
+7:0/0 = 0
+7:0/0/probability = 0.6
+7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 3, 8, 3, 8, 8, -8, 8)
+8:0/0 = 0
+8:0/0/probability = 0.6
+8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 3, 8, 3, 8, 8, -8, 8)
+9:0/0 = 0
+9:0/0/probability = 0.6
+9:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 3, 8, 3, 8, 8, -8, 8)
+10:0/0 = 0
+10:0/0/probability = 0.6
+10:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 3, 8, 3, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_ecn3p"]
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_5mvg0")
+
+[node name="Floor" type="TileMapLayer" unique_id=478735910]
+material = SubResource("ShaderMaterial_y2qpd")
+tile_set = SubResource("TileSet_ecn3p")

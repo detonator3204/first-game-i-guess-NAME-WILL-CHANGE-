@@ -1,0 +1,208 @@
+[gd_scene format=3 uid="uid://jbwn5mpt70x3"]
+
+[ext_resource type="Shader" uid="uid://dcc0av6s1kalv" path="res://Assets/Shaders/lighting.gdshader" id="1_fh8au"]
+[ext_resource type="Texture2D" uid="uid://87ry8gg8vkrv" path="res://Assets/Obstacle/shooter.png" id="2_7iyru"]
+[ext_resource type="Script" uid="uid://ld3de3lg4bxe" path="res://Scenes/Hazards/bullet.gd" id="3_7iyru"]
+[ext_resource type="Texture2D" uid="uid://brr7pyop0f3xp" path="res://Assets/Obstacle/shooter-bullet.png" id="3_8tff4"]
+[ext_resource type="AudioStream" uid="uid://coohps0xgeo53" path="res://Assets/SFX/shoot.wav" id="5_8tff4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ecn3p"]
+size = Vector2(8, 8)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y2qpd"]
+shader = ExtResource("1_fh8au")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1hmd2"]
+size = Vector2(1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ecn3p"]
+shader = ExtResource("1_fh8au")
+
+[sub_resource type="Animation" id="Animation_7iyru"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bullet:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Bullet:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Shooter:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Shoot:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Bullet:disable_mode")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Bullet/BulletCollision:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_8tff4"]
+resource_name = "stardard"
+length = 4.5666666
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bullet:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.16666667, 3.8333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 1), Vector2(-240, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Bullet:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.16666667, 1.8333334, 2.9666667, 3.1333334, 3.6, 3.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.06085241, 0.077793896), Vector2(1, 1), Vector2(1, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Shooter:scale")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.8, 0.9, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.39, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Shoot:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.33333334),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = false
+tracks/4/path = NodePath("Bullet:disable_mode")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Bullet/BulletCollision:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 2.7666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ute2w"]
+_data = {
+&"RESET": SubResource("Animation_7iyru"),
+&"stardard": SubResource("Animation_8tff4")
+}
+
+[node name="Shooter" type="Area2D" unique_id=140141220]
+disable_mode = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1654227266]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_ecn3p")
+
+[node name="Shooter" type="Sprite2D" parent="." unique_id=347700764]
+material = SubResource("ShaderMaterial_y2qpd")
+texture = ExtResource("2_7iyru")
+
+[node name="Bullet" type="Area2D" parent="." unique_id=585237984]
+position = Vector2(0, 1)
+script = ExtResource("3_7iyru")
+metadata/_edit_group_ = true
+
+[node name="BulletCollision" type="CollisionShape2D" parent="Bullet" unique_id=1145333185]
+shape = SubResource("RectangleShape2D_1hmd2")
+
+[node name="Bullet" type="Sprite2D" parent="Bullet/BulletCollision" unique_id=1747919329]
+material = SubResource("ShaderMaterial_ecn3p")
+texture = ExtResource("3_8tff4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1268958512]
+libraries/ = SubResource("AnimationLibrary_ute2w")
+autoplay = &"stardard"
+
+[node name="Shoot" type="AudioStreamPlayer2D" parent="." unique_id=1094826734]
+stream = ExtResource("5_8tff4")
+max_distance = 250.0

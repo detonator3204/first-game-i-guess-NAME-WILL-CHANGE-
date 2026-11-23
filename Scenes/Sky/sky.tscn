@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bf2avyiw8xj7n"]
+
+[node name="Sky" type="ColorRect" unique_id=1401471684]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -190165.0
+offset_top = -101421.0
+offset_right = 230736.0
+offset_bottom = 133418.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.16862746, 0.15686275, 0.23137255, 1)

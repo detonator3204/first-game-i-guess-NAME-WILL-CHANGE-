@@ -1,0 +1,127 @@
+[gd_scene format=3 uid="uid://dkl8exn7uy66u"]
+
+[ext_resource type="Shader" uid="uid://dcc0av6s1kalv" path="res://Assets/Shaders/lighting.gdshader" id="1_4iw4r"]
+[ext_resource type="Script" uid="uid://q7jsbgkmcsk" path="res://Scenes/Collectables/moonstone.gd" id="1_yukf6"]
+[ext_resource type="Texture2D" uid="uid://7ja76hwfvpr6" path="res://Assets/Collectables/moonstone.png" id="2_h47y7"]
+[ext_resource type="Texture2D" uid="uid://c51l811nkih8i" path="res://Assets/Collectables/moonstonebackdrop.png" id="2_tg8ue"]
+[ext_resource type="AudioStream" uid="uid://cou8m1i6bwbfh" path="res://Assets/SFX/point.wav" id="4_tg8ue"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ecn3p"]
+radius = 4.472136
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ecn3p"]
+shader = ExtResource("1_4iw4r")
+
+[sub_resource type="Animation" id="Animation_yukf6"]
+resource_name = "Idle"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Moonstone:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 3.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -2.03), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_k0e2e"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Moonstone:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Moonstone:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_tg8ue"]
+resource_name = "collect"
+length = 0.76666665
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Moonstone:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.03333333, 0.23333335),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -7.22)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Moonstone:scale")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.13333344, 0.4, 0.5333334, 0.6666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1, 1), Vector2(0, 0), Vector2(1, 1), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_torbq"]
+_data = {
+&"Idle": SubResource("Animation_yukf6"),
+&"RESET": SubResource("Animation_k0e2e"),
+&"collect": SubResource("Animation_tg8ue")
+}
+
+[node name="Moonstone" type="Area2D" unique_id=2059430410]
+script = ExtResource("1_yukf6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=202133305]
+shape = SubResource("CircleShape2D_ecn3p")
+
+[node name="Backdrop" type="Sprite2D" parent="." unique_id=130097231]
+visible = false
+material = SubResource("ShaderMaterial_ecn3p")
+texture = ExtResource("2_tg8ue")
+
+[node name="Moonstone" type="Sprite2D" parent="." unique_id=1742010942]
+material = SubResource("ShaderMaterial_ecn3p")
+texture = ExtResource("2_h47y7")
+
+[node name="MoonstoneParticles" type="CPUParticles2D" parent="." unique_id=1634840869]
+visible = false
+emission_shape = 1
+emission_sphere_radius = 11.14
+gravity = Vector2(0, 0)
+radial_accel_min = -15.84
+radial_accel_max = -15.84
+scale_amount_min = 0.0
+scale_amount_max = 0.5
+color = Color(1, 1, 0.8862745, 1)
+
+[node name="Collection" type="AudioStreamPlayer2D" parent="." unique_id=572086614]
+stream = ExtResource("4_tg8ue")
+volume_db = -20.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2101616991]
+root_node = NodePath("../Collection")
+libraries/ = SubResource("AnimationLibrary_torbq")
+autoplay = &"Idle"

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bj82en4b0glxu"]
+
+[ext_resource type="PackedScene" uid="uid://bf2avyiw8xj7n" path="res://Scenes/Sky/sky.tscn" id="1_amf2p"]
+[ext_resource type="PackedScene" uid="uid://bu7afluiy6mhw" path="res://Scenes/Sky/moon.tscn" id="2_ngdap"]
+
+[node name="Combined" type="Node2D" unique_id=2046421081]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=557766024]
+layer = -1
+follow_viewport_enabled = true
+
+[node name="Sky" parent="CanvasLayer" unique_id=1401471684 instance=ExtResource("1_amf2p")]
+
+[node name="Moon" parent="CanvasLayer/Sky" unique_id=1811235713 instance=ExtResource("2_ngdap")]
+position = Vector2(190227, 101400)

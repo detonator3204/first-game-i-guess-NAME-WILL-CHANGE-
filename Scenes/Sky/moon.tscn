@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://bu7afluiy6mhw"]
+
+[ext_resource type="Shader" uid="uid://dcc0av6s1kalv" path="res://Assets/Shaders/lighting.gdshader" id="1_4c783"]
+[ext_resource type="Texture2D" uid="uid://mkcyqf5v4qk4" path="res://Assets/Sky/Moon/moon1.png" id="2_4p3fd"]
+[ext_resource type="Texture2D" uid="uid://da71tv1y2444j" path="res://Assets/Sky/Moon/moon2.png" id="3_y51t5"]
+[ext_resource type="Texture2D" uid="uid://dvulmm0kmk5g3" path="res://Assets/Sky/Moon/moon3.png" id="4_b2qxa"]
+[ext_resource type="Texture2D" uid="uid://bm8niynkm1ap3" path="res://Assets/Sky/Moon/moon4.png" id="5_rssco"]
+[ext_resource type="Texture2D" uid="uid://chj41ahuw7x0d" path="res://Assets/Sky/Moon/moon5.png" id="6_8nb6t"]
+[ext_resource type="Texture2D" uid="uid://dgo5oly2boc02" path="res://Assets/Sky/Moon/moon6.png" id="7_yyek2"]
+[ext_resource type="Texture2D" uid="uid://daipxinle55f6" path="res://Assets/Sky/Moon/moon7.png" id="8_2r5t1"]
+[ext_resource type="Texture2D" uid="uid://deuxdmrqgu8qj" path="res://Assets/Sky/Moon/moon8.png" id="9_kthps"]
+[ext_resource type="Texture2D" uid="uid://cig5tcssnk2h0" path="res://Assets/Sky/Moon/moon9.png" id="10_bit82"]
+[ext_resource type="Texture2D" uid="uid://f1jue2l0didt" path="res://Assets/Sky/Moon/moon10.png" id="11_ke5uq"]
+[ext_resource type="Texture2D" uid="uid://ce37hjryqk5yl" path="res://Assets/Sky/Moon/moon11.png" id="12_31mee"]
+[ext_resource type="Texture2D" uid="uid://cklecpdm13tc0" path="res://Assets/Sky/Moon/moon12.png" id="13_dkyl3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y2qpd"]
+shader = ExtResource("1_4c783")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ecn3p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4p3fd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_y51t5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_b2qxa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_rssco")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8nb6t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_yyek2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_2r5t1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_kthps")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_bit82")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ke5uq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_31mee")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_dkyl3")
+}],
+"loop": 1,
+"name": &"swing",
+"speed": 5.0
+}]
+
+[node name="Moon" type="AnimatedSprite2D" unique_id=1811235713]
+material = SubResource("ShaderMaterial_y2qpd")
+sprite_frames = SubResource("SpriteFrames_ecn3p")
+animation = &"swing"
+autoplay = "swing"
+frame_progress = 0.56863284

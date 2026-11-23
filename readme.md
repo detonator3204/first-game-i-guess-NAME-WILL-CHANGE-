@@ -1,2 +1,3 @@
 
- I am retard, this is a test
+ I am numbskull, this is a test
+agreed!
